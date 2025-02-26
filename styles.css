@@ -666,15 +666,15 @@ nav,
   position: absolute;
   top: 25%;
   left: 90px;
-  transform: translateY(100%);
+  transform: translateY(100%); 
   max-width: 550px;
   z-index: 3;
-  opacity: 0;
-  transition: transform 450ms, opacity 300px;
+  opacity: 0; 
+  transition: transform 450ms, opacity 300ms; 
 }
 
 .project__description--title {
-  font-size: 40px;
+  font-size: 40px;                              
 }
 
 .project__description--para {
