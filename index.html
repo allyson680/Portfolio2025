@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio A Washburn</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://kit.fontawesome.com/8061232636.js" crossorigin="anonymous"></script>
+    ></script>
+    <script src="index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "5wpl4mNv8rcmCXNVK",
+        });
+      })();
+    </script>
+  </head>
+
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal__logo" src="./assets/personal-logo.svg" alt="" />
+        </figure>
+        <ul class="nav__link--list">
+          
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor-primary"
+              >Contact</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+            ></a
+            ><i class="fa-solid fa-circle-half-stroke"></i>
+          </li>
+        </ul>
+      </nav>
+      
+      <header class="header">
+          <div class="header__row">
+            <figure class="header__img--wrapper">
+              <img
+                src="./assets/Profile Pic.jpg"
+                class="header__img rotate-6"
+                alt=""
+              />
+            </figure>
+            <div class="header__content">
+              <h1 class="title">
+                Hello! My name is
+                <span class="text--red letter">A</span>
+                <span class="text--red letter">l</span>
+                <span class="text--red letter">l</span>
+                <span class="text--red letter">y</span>
+                <span class="text--red letter">s</span>
+                <span class="text--red letter">o</span>
+                <span class="text--red letter">n</span> !
+              </h1>
+              <p class="header__para">
+                I am a <b class="text--red">Junior Frontend Developer</b> with a
+                deep enthusiasm for crafting websites
+                <br>and a
+                <b class="text--red">committed focus</b> on honing my skills.</br>
+                 Here's a bit more
+                <b class="text--red about__hover-effect click" onclick="toggleModal()" >about me.</b>
+              </p>
+              <div class="header__links">
+                <a href="https://www.linkedin.com/in/allyson-washburn-b33553306" target="_blank" class="header__link click">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/allyson680" target="_blank" class="header__link click">
+                  <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a
+                href="./assets/Allyson_Washburn_Resume.pdf"
+                target="_blank"
+                class="header__link click"
+              >
+                <i class="fas fa-file-pdf"></i>
+              </a>
+              </div>
+            </div>
+        </div>
+        
+      </header>
+      <button class="mail__btn click">
+        <a href="#">
+        <i class="fa-solid fa-envelope" onclick="toggleModal()"></i></a>
+      </button>
+        <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">About me...</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">Junior Frontend Developer</h4>
+          <p class="modal__para">As a <b class="text--red">dedicated</b> <b class="text--blue">Junior Frontend Developer</b> with a profound passion for technology, I have successfully navigated my path in this dynamic field.
+            <br>My <b class="text--red">enthusiasm</b> has fueled my continuous growth in Frontend Development and motivates me to pursue further knowledge.
+            <br>I excel both in autonomous roles and collaborative settings, and my strong<b class="text--red"> work ethic </b> serves as a valuable asset to any organization I join.
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/img.icons8.png"alt="">
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/CSS logo.png"alt="">
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/JAVASCRIPT logo.png"alt="">
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/REACT logo.png"alt="">
+              <span class="language__name">React</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">
+            Let's have a chat!
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">I am actively seeking new opportunities to advance my career.
+          </h4>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" type="text" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">Send it my way</button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for the message! Looking forward to speaking with you soon!
+        </div>
+      </div>
+      </div>
+      
+    </section>
+
+    <section id="projects">
+        <h1 class="projects__title">
+            Here are some of my <span class="text--red">projects</span>
+        </h1>
+        <ul class="project__list">
+            <li class="project"></li>
+            <div class="project__wrapper">
+                <img class="project__img" src="./assets/white-gray-work-quotes-desktop-wallpaper-1-free-photo.jpg" alt="">
+                <div class="project__description">
+                    <h3 class="project__description--title">
+                        Build a Website Project
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                        Html, CSS, JavaScript
+                    </h4>
+                    <p class="project__description--para"> This project marked my inaugural endeavor in website development, utilizing HTML, CSS, and JavaScript. It provided invaluable experience in structuring various sections, incorporating images, and establishing hyperlinks. Additionally, it enhanced my skills in creating responsive designs that adapt seamlessly across diverse devices, including PCs, mobile phones, and tablets.
+                    </p>
+                    <div class="project__description--links">
+                        <a href="https://github.com/allyson680"
+                        target="_blank"
+                        class="project__description--link">
+                        <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://allyson680.github.io/FESweek2Final/"
+                        target="_blank"
+                        class="project__description--link">
+                        <i class="fas fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+                </img>
+                </div>
+            </div>
+        </ul>
+    </section>
+
+    <footer id="footer">
+        <div class="row footer__row">
+            <a href="#" class="footer__anchor">
+              <figure class="footer__logo">
+                  <img
+                  src="./assets/personal-logo.svg"
+                  class="footer__logo--image"
+                  />
+                  <span class="footer__logo--popper">
+                  Top
+                  <i class="fas fa-arrow-up"></i>
+              </figure>
+            </a>
+            <div class="footer__social--list">
+              <a
+                href="https://github.com/allyson680"
+                target="_blank"
+                class="footer__social--link link__hover-effect link__hover-effect--white"
+                target="_blank"
+                >GitHub</a
+              >
+              <a
+                href="https://www.linkedin.com/in/allyson-washburn-b33553306"
+                target="_blank"
+                class="footer__social--link link__hover-effect link__hover-effect--white"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a
+                href="#"  onclick="toggleModal()"
+                class="footer__social--link link__hover-effect link__hover-effect--white"
+                >Email</a
+              >
+              <a
+                href="./assets/Allyson_Washburn_Resume.pdf"
+                target="_blank"
+                class="footer__social--link link__hover-effect link__hover-effect--white"
+                target="_blank"
+                >Resume</a
+              >
+            </div>
+            <div class="footer__copyright">
+              Copyright © 2024 Allyson Washburn
+            </div>
+        </div>
+    </footer>                
+  </body>
+</html>
