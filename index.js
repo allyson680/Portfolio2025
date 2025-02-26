@@ -2,7 +2,6 @@ let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
 
-
 function toggleContrast() {
   contrastToggle = !contrastToggle;
   if (contrastToggle) {
@@ -44,5 +43,3 @@ function toggleModal() {
   isModalOpen = true;
   document.body.classList += " modal--open";
 }
-
-
